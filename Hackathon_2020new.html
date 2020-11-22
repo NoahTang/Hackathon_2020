@@ -1,0 +1,125 @@
+<html>
+   <head>
+      <style>
+         html, body, #container {
+         height: 100%;
+         background-color: rgb(177,235,253);
+         }
+         header {
+         height: 50px;
+         background: gray;
+         }
+         main {
+         height: 100%;
+         background: green;
+         }
+         .half {
+         height: 50%;
+         }
+         .half:first-child {
+         background: white;
+         }
+         .half:last-child {
+         background: black;
+         }
+         .turkey{display: block; margin-left: auto; margin-right: auto; width: 15%;}
+         .teamname{font-family: 'Courier New', Courier, monospace; font-size:large}
+         @keyframes fadeIn {
+         0% {opacity:0;}
+         100% {opacity:1;}
+         }
+         .fadeIn{
+         animation-name: fadeIn;
+         animation-duration: 15s;
+         }
+      </style>
+      <pre id="clickme" style="font-family: 'Courier New', Courier, monospace;">
+We have recieved a bitmap image of a turkey from the previous team. 
+Please click the button to show the encoded ascii and send a message to the next team
+      </pre>
+      <div class="fadeIn">
+         <a href="https://imgbb.com/">
+         <img src="https://i.ibb.co/2KVMm1M/thankyou.png" alt="thankyou"   class="turkey"></a>
+      </div>
+      <div id="printhere">
+      <div>
+      <style id="animation">
+         @keyframes movingball {
+         0%   {background-color:transparent; left:200px; top:200px}
+         20%  {background-color:transparent; left:200px; text-outline: 200px;} 
+         30%  {background-color:red; ; left:50px; top:50px}
+         40%  {background-color:red; ; left:0px; top:410px} 		
+         100% {background-color:red; ; left:2000px; top:410px}
+         }
+         .movingball{
+         position: relative;
+         animation-name: movingball;
+         animation-duration: 10s;
+         background: red;
+         border-radius: 50%;
+         width: 100px;
+         height: 100px;
+         }
+         @keyframes ascii {
+         0% {color: black}
+         30% {color: transparent}
+         100% {color: transparent}
+         }
+         .pre {
+         animation-name: ascii;
+         animation-duration: 10s;
+         font-size:x-large  ;
+         }
+         .hidden{
+         color: transparent;
+         }
+         .die{
+         display:block;
+         margin-left:auto;
+         margin-right:auto;
+         width:15%;
+         border-radius: 4px;
+         background-color: #f4511e;
+         border: none;
+         color: #FFFFFF;
+         text-align: center;
+         font-size: 28px;
+         padding: 20px;
+         width: 200px;
+         transition: all 0.5s;
+         cursor: pointer;
+         }
+      </style>
+      <div class="center">
+         <button onclick= "addClass()" class="die">C L I C K</button>
+      </div>
+   </head>
+   <body>
+      <div id="movingball" ></div>
+      <pre id="pre" class="hidden"> 
+         .-"""-.
+        /   _   \
+        |  (8)  |
+        \   ^   /	
+         '-...-'
+        </pre>
+      <div id="container">
+         <header></header>
+         <div class='teamname' style="position: absolute; top: 20; right: 60; width: 200px; text-align:right;">
+            Team 3: 2 on 3
+         </div>
+         <main>
+            <section class="half"></section>
+            <section class="half"></section>
+         </main>
+      </div>
+   </body>
+</html>
+<script>
+   function addClass(){
+      document.getElementById('movingball').classList.add('movingball');
+      document.getElementById('pre').classList.remove('hidden');
+      document.getElementById('pre').classList.add('pre');
+      
+   }
+</script>
